@@ -1,4 +1,4 @@
-
+-- Although Blackboard claims that archives and exports are automatically deleted after 30 days, that's not always the case.
 SELECT SPLIT_PART(xu.full_path, '/', 4) AS course_id, xu.full_path, xf.creation_date, xf.file_size
 FROM xyf_urls xu, xyf_files xf
 WHERE xu.file_name LIKE '%ArchiveFile%'
