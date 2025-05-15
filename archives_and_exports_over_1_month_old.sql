@@ -6,6 +6,7 @@ WHERE xu.file_name LIKE '%ArchiveFile%'
 AND xf.file_id = xu.file_id
 AND xu.file_name LIKE '%.zip'
 AND xu.full_path LIKE '/internal%'
+-- If you want to get all current archives and exports, you can always comment off each xf.creation_date line.
 AND xf.creation_date < DATE_TRUNC('day', NOW() - INTERVAL '1 month')
 OR xu.file_name LIKE 'ArchiveExFile%'
 AND xf.file_id = xu.file_id
